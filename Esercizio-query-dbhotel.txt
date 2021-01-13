@@ -51,6 +51,6 @@ ESERCIZIO DB-HOTEL QUERIES
 
 - Somma i prezzi dei pagamenti raggruppandoli per status
 
-	SELECT SUM(price) , `status`
+	SELECT SUM(price) AS 'sum_price_status' , `status`
         FROM `pagamenti`
         GROUP BY `status`;
