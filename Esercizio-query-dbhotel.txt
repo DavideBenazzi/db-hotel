@@ -27,6 +27,10 @@ ESERCIZIO DB-HOTEL QUERIES
 
 - Calcola il totale degli ordini accepted
 
+	SELECT SUM(price)
+        FROM `pagamenti`
+        WHERE `status` = 'accepted';
+
 - Qual è il prezzo massimo pagato?
 
 - Seleziona gli ospiti riconosciuti con patente e nati nel 1975
