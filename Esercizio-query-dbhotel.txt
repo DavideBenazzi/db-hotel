@@ -20,6 +20,11 @@ ESERCIZIO DB-HOTEL QUERIES
 
 - Seleziona tutti gli ospiti il cui nome inizia con la E
 
+	SELECT *
+        FROM `ospiti`
+        WHERE `name` LIKE 'E%'; 
+
+
 - Calcola il totale degli ordini accepted
 
 - Qual è il prezzo massimo pagato?
