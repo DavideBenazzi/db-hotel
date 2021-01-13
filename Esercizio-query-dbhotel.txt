@@ -50,3 +50,7 @@ ESERCIZIO DB-HOTEL QUERIES
         FROM `stanze`;
 
 - Somma i prezzi dei pagamenti raggruppandoli per status
+
+	SELECT SUM(price) , `status`
+        FROM `pagamenti`
+        GROUP BY `status`;
