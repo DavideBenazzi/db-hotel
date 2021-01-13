@@ -14,6 +14,10 @@ ESERCIZIO DB-HOTEL QUERIES
 
 - Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query)
 
+	SELECT *
+        FROM `ospiti`
+        WHERE `date_of_birth` > DATE_SUB( CURDATE(), INTERVAL 20 YEAR ); 
+
 - Seleziona tutti gli ospiti il cui nome inizia con la E
 
 - Calcola il totale degli ordini accepted
