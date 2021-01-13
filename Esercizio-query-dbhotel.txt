@@ -27,13 +27,13 @@ ESERCIZIO DB-HOTEL QUERIES
 
 - Calcola il totale degli ordini accepted
 
-	SELECT SUM(price)
+	SELECT SUM(price) 'total_price_accepted'
         FROM `pagamenti`
         WHERE `status` = 'accepted';
 
 - Qual è il prezzo massimo pagato?
 
-	SELECT MAX(price)
+	SELECT MAX(price) AS 'max_price_accepted'
         FROM `pagamenti`
         WHERE `status` = 'accepted';
 
@@ -45,5 +45,8 @@ ESERCIZIO DB-HOTEL QUERIES
         AND YEAR(`date_of_birth`) = '1975';
 
 - Quanti posti letto ha l’hotel in totale?
+
+	SELECT SUM(beds) AS 'beds_total'
+        FROM `stanze`;
 
 - Somma i prezzi dei pagamenti raggruppandoli per status
