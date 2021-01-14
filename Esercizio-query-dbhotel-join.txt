@@ -54,3 +54,9 @@ ESERCIZIO DB-HOTEL QUERIES PARTE 2: JOIN
 	WHERE `prenotazioni` . `id` = 7;
 
 - Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
+
+	SELECT `stanze` . `room_number` , `stanze` . `floor` , `stanze` . `beds`
+	FROM `stanze`
+	LEFT JOIN `prenotazioni`
+	ON `prenotazioni` . `stanza_id` = `stanze` . `id`
+	WHERE `prenotazioni` . `id` IS NULL;
