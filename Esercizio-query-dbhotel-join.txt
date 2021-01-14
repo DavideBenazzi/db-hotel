@@ -35,6 +35,14 @@ ESERCIZIO DB-HOTEL QUERIES PARTE 2: JOIN
 
 - Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
 
+	SELECT SUM(`pagamenti` . `price`) AS `tot_prezzo_primo_piano`
+	FROM `prenotazioni`
+	INNER JOIN `stanze`
+	ON `prenotazioni` . `stanza_id` = `stanze` . `id`
+	INNER JOIN `pagamenti`
+	ON `pagamenti` . `prenotazione_id` = `pagamenti` . `id`
+	WHERE `stanze` . `floor` = 1;
+
 - Prendi i dati di fatturazione (name, lastname e address) per la prenotazione con id=7
 
 - Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
