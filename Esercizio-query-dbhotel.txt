@@ -27,7 +27,7 @@ ESERCIZIO DB-HOTEL QUERIES
 
 - Calcola il totale degli ordini accepted
 
-	SELECT SUM(price) 'total_price_accepted'
+	SELECT SUM(price) AS 'total_price_accepted'
         FROM `pagamenti`
         WHERE `status` = 'accepted';
 
