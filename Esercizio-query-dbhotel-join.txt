@@ -45,4 +45,12 @@ ESERCIZIO DB-HOTEL QUERIES PARTE 2: JOIN
 
 - Prendi i dati di fatturazione (name, lastname e address) per la prenotazione con id=7
 
+	SELECT `prenotazioni` . `id` , `paganti` . `name` , `paganti` . `lastname` , `paganti` . `address`
+	FROM `prenotazioni`
+	INNER JOIN `pagamenti`
+	ON `pagamenti` . `prenotazione_id` = `prenotazioni` . `id`
+	INNER JOIN `paganti`
+	ON `pagamenti` . `pagante_id` = `paganti` . `id`
+	WHERE `prenotazioni` . `id` = 7;
+
 - Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
