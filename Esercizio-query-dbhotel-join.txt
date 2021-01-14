@@ -2,7 +2,22 @@ ESERCIZIO DB-HOTEL QUERIES PARTE 2: JOIN
 
 - Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
 
+	SELECT `ospiti` . `name` , COUNT(`prenotazioni_has_ospiti` . `ospite_id`) AS `tot_prenotations`
+        FROM `ospiti`
+        INNER JOIN `prenotazioni_has_ospiti`
+        ON `prenotazioni_has_ospiti` . `ospite_id` = `ospiti` . `id`
+        GROUP BY `ospiti` . `name`
+        HAVING COUNT(`tot_prenotations`) > 2;
+
 - Stampare tutti gli ospiti per ogni prenotazione
+
+	SELECT `prenotazioni` . `id` AS `prenotation` , `ospiti` . `name` , `ospiti` . `lastname`
+        FROM `prenotazioni`
+        INNER JOIN `prenotazioni_has_ospiti`
+        ON `prenotazioni_has_ospiti` . `prenotazione_id` = `prenotazioni` . `id`
+        INNER JOIN `ospiti`
+        ON `prenotazioni_has_ospiti` . `ospite_id` = `ospiti` . `id`
+        ORDER BY `prenotation` ASC;
 
 - Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
 
